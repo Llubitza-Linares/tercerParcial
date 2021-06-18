@@ -1,8 +1,8 @@
 package visitor.ejercicio2;
 
 public interface ILibrecamnbista {
-    void cambio(Argentina argentina);
-    void cambio(Bolivia bolivia);
-    void cambio(Brasil brasil);
-    void cambio(Italia italia);
+    void cambiar(Bolivia bolivia);
+    void cambiar(Argentina argentina);
+    void cambiar(Brasil brasil);
+    void cambiar(Italia italia);
 }

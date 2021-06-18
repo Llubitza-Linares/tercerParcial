@@ -3,28 +3,27 @@ package visitor.ejercicio2;
 public class Client {
     public static void main(String []sss){
 
-        Argentina argentina= new Argentina();
-        Bolivia bolivia= new Bolivia();
-        Brasil brasil= new Brasil();
+        Bolivia bolivia=new Bolivia();
+        bolivia.setMonedaLocal(true);
+        bolivia.setValor(70);
+
+        Brasil brasil=new Brasil();
+        brasil.setMonedaLocal(false);
+        brasil.setValor(1);
+
+        Argentina argentina=new Argentina();
+        argentina.setMonedaLocal(true);
+        argentina.setValor(1);
+
         Italia italia=new Italia();
+        italia.setMonedaLocal(false);
+        italia.setValor(1);
 
-        Cambista cambista1= new Cambista();
-        argentina.accept(cambista1);
-        bolivia.accept(cambista1);
-        brasil.accept( cambista1);
-        italia.accept(cambista1);
-
-        Cambista cambista2= new Cambista();
-        argentina.accept( cambista2);
-        bolivia.accept(cambista2);
-        brasil.accept(cambista2);
-        italia.accept( cambista2);
-
-        Cambista cambista3= new Cambista();
-        argentina.accept( cambista3);
-        bolivia.accept( cambista3);
-        brasil.accept( cambista3);
-        italia.accept( cambista3);
+        ILibrecamnbista libreCambista=new Cambista();
+        bolivia.accept(libreCambista);
+        brasil.accept(libreCambista);
+        argentina.accept(libreCambista);
+        italia.accept(libreCambista);
 
 
     }

@@ -1,33 +1,32 @@
 package visitor.ejercicio2;
 
-public class Italia implements IPaises{
+public class Italia implements IPaises {
 
-    private String cambio;
-    private String moneda;
-    @Override
-    public void accept(ILibrecamnbista librecamnbista) {
+    private double valor;
+    //Para saber si se quiere cambiar de la moneda local a dolares(true) o al reves (false)
+    private Boolean monedaLocal;
 
-        librecamnbista.cambio(this);
+    public Italia() {
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    public Boolean getMonedaLocal() {
+        return monedaLocal;
+    }
+
+    public void setMonedaLocal(Boolean monedaLocal) {
+        this.monedaLocal = monedaLocal;
     }
 
     @Override
-    public void cambio(ILibrecamnbista librecamnbista) {
-
-    }
-
-    public String getCambio() {
-        return cambio;
-    }
-
-    public void setCambio(String cambio) {
-        this.cambio = cambio;
-    }
-
-    public String getMoneda() {
-        return moneda;
-    }
-
-    public void setMoneda(String moneda) {
-        this.moneda = moneda;
+    public void accept(ILibrecamnbista visitante) {
+        visitante.cambiar(this);
     }
 }
