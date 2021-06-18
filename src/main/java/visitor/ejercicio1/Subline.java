@@ -1,63 +1,44 @@
 package visitor.ejercicio1;
 
-import visitor.ejercicio1.IEditores;
-import visitor.ejercicio1.ISoftware;
-
 public class Subline implements ISoftware {
 
-    private String version;
-    private boolean licencia;
-    private String herramientas;
-    private String texto;
+    private String nombre;
+    private String contenido;
 
-    public Subline(){}
-
-    public String getVersion() {
-        return version;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setVersion(String version) {
-        this.version = version;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public boolean isLicencia() {
-        return licencia;
+    public String getContenido() {
+        return contenido;
     }
 
-    public void setLicencia(boolean licencia) {
-        this.licencia = licencia;
+    public void setContenido(String contenido) {
+        this.contenido = contenido;
     }
 
-    public String getHerramientas() {
-        return herramientas;
-    }
-
-    public void setHerramientas(String herramientas) {
-        this.herramientas = herramientas;
-    }
-
-    public String getTexto() {
-        return texto;
-    }
-
-    public void setTexto(String texto) {
-        this.texto = texto;
-    }
-
-    public void crear(String texto){
-        this.texto=texto;
-    }
-
-    public void eliminar(){
-        this.texto="";
-    }
-
-    public void editar(String texto){
-        this.texto=texto+""+texto;
-    }
     @Override
     public void accept(IEditores editores) {
+        editores.guardarArchivos(this);
 
+    }
+
+    @Override
+    public void crear() {
+
+    }
+
+    @Override
+    public void editar() {
+
+    }
+
+    @Override
+    public void eliminar() {
 
     }
 }

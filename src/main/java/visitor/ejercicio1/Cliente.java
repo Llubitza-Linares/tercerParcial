@@ -6,31 +6,22 @@ package visitor.ejercicio1;
 //cantidad de caracteres que tiene el documento.
 
 public class Cliente {
-    public static void main(String []sss){
+    public static void main(String[] sss) {
 
-        Word word= new Word();
-        Notepad notepad= new Notepad();
-        Subline subline= new Subline();
+        Notepad notepad = new Notepad();
+        Word word = new Word();
+        Subline subline = new Subline();
+        Complemento complemento = new Complemento();
 
-        Complemento editor1= new Complemento();
-        // Crear
-        word.crear("Este texto esta siendo creado");
-        notepad.crear("Este texto esta siendo creado");
-        subline.crear("Este texto esta siendo creado");
+        notepad.setContenido("documento1");
 
-        Complemento editor2= new Complemento();
-        // Editar
-        word.editar("Este texto esta siendo editado");
-        notepad.editar("Este texto esta siendo editado");
-        subline.editar("Este texto esta siendo editado");
+        word.setContenido("documento2");
 
-        Complemento editor3 = new Complemento();
-        // Eliminar
-        word.eliminar();
-        notepad.eliminar();
-        subline.eliminar();
-
+        notepad.accept(complemento);
+        word.accept(complemento);
+        subline.accept(complemento);
 
     }
+
 
 }

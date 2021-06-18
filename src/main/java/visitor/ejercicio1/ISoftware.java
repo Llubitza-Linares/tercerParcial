@@ -1,7 +1,12 @@
 package visitor.ejercicio1;
 
-import visitor.ejercicio1.IEditores;
-
 public interface ISoftware {
+    void crear();
+
+    void editar();
+
+    void eliminar();
+
     void accept(IEditores editores);
+
 }
